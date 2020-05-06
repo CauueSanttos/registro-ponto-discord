@@ -1,5 +1,5 @@
 import Discord from 'discord.js';
-import { token_auth } from '../config/authBot';
+import { token } from '../token';
 
 export async function sendMessage(message) {
   const client = new Discord.Client();
@@ -12,5 +12,5 @@ export async function sendMessage(message) {
       .send(message);
   });
   
-  await client.login(token_auth);
+  await client.login(token);
 }
