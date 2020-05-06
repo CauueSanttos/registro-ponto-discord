@@ -10,6 +10,14 @@ export const Container = styled.div`
   align-items: center;
   
   background: #222d48;
+
+  span {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
 `;
 
 export const DotButton = styled.button`
