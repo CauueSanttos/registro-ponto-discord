@@ -1,2 +1,2 @@
-export const token_auth =
-  'NzA1NDkzODYzNDg1NDA3MjQy.Xqsidg.c-moA-a_DW20UQ6LIVBcAf4ZlFs';
+export const token_auth = 
+'NzA1NDkzODYzNDg1NDA3MjQy.XrNHtA.AQhMDry8DqiCQ0Ut__7E5vEgVbg';
