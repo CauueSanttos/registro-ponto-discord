@@ -7,10 +7,14 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
+    show: false
   });
 
   win.removeMenu();
   win.loadURL('http://localhost:3000/');
+  win.once('ready-to-show', () => {
+    win.show();
+  })
 }
 
 app.whenReady().then(createWindow);
