@@ -1,20 +1,39 @@
 const { app, BrowserWindow } = require('electron');
 
+const path = require('path');
+const isDev = require('electron-is-dev');
+
+let win;
+
 function createWindow() {
-  let win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 300,
     height: 200,
     webPreferences: {
       nodeIntegration: true
     },
-    show: false
+    show: false,
+    icon: './icon.ico'
   });
 
   win.removeMenu();
-  win.loadURL('http://localhost:3000/');
+  win.loadURL(
+    isDev 
+    ? 
+    'http://localhost:3000/' 
+    : 
+    `file://${path.join(__dirname, '../build/index.html')}
+  `);
+
+  if (isDev) {
+    win.webContents.openDevTools();
+  }
+
+  win.on('closed', () => win = null);
+
   win.once('ready-to-show', () => {
     win.show();
-  })
+  });
 }
 
 app.whenReady().then(createWindow);
